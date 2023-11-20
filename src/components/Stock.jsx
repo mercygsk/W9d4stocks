@@ -10,7 +10,7 @@ function Stock() {
   const symbol = params.symbol;
 
   //const url = `http://rest.stockssapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`;
-  const url = `https://financialmodelingprep.com/api/v3/stock/real-time-price/AAPL?apikey=a165b050d657c4ab48fba95d2031793d`
+  const url = `https://financialmodelingprep.com/api/v3/stock/real-time-price/${symbol}?apikey=${apiKey}`
   const [stockss, setStockss] = useState("null");
 
   const getstockss = async () => {
@@ -32,7 +32,7 @@ const loaded = () => {
   return (
       <div>
           <h1>
-              {stockss.companiesPriceList.symbol}
+              {stockss.companiesPriceList[0].symbol} / {stockss.companiesPriceList[0].price}
           </h1>
           {/* <h2>{stockss.companiesPriceLists.price}</h2> */}
       </div>
